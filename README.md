@@ -16,10 +16,10 @@ The first step you should take is to pull down the project from github. If you'r
 	* Then, open up PGAdminIII
 	* Double-click on the "PostgreSQL 9.3..." entry on the explorer pane on the left. It should have a symbol with an X, and it will prompt you for a password. Enter "secret"
 	* Left-click on Login Roles and select "New Login Role"
-		2fi. On the main tab, enter "Pizza" as the role name
-		2fii. On the Definition page, enter "Secret" as the password in both fields
-		2fiii. On the Role Privileges page, check every box
-		2fiv. Press OK (you should see the role appear in the explorer pane under Login Roles when you refresh)
+		* On the main tab, enter "Pizza" as the role name
+		* On the Definition page, enter "Secret" as the password in both fields
+		* On the Role Privileges page, check every box
+		* Press OK (you should see the role appear in the explorer pane under Login Roles when you refresh)
 	* Open up a command prompt and navigate to your project folder
 	* Type "createdb -U Pizza pizzamaster" in your command prompt. Enter "secret" as the password. If you refresh pgadminIII, you should see the database appear under databases
 	* If everything has worked up to this point, you're doing great!
