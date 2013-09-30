@@ -24,7 +24,7 @@ The first step you should take is to pull down the project from github. If you'r
 	* Type "createdb -U Pizza pizzamaster" in your command prompt. Enter "secret" as the password. If you refresh pgadminIII, you should see the database appear under databases
 	* If everything has worked up to this point, you're doing great!
 	
-  3. Navigate to your project folder in the command prompt.
+ 3. Navigate to your project folder in the command prompt.
 	* type "bundle install". You'll see a bunch of stuff happen. Hopefully you don't get any errors
 	* MOMENT OF TRUTH: type "rake db:migrate". If this works, you're ready for local development! If not, contact me.
 
