@@ -31,3 +31,6 @@ The first step you should take is to pull down the project from github. If you'r
 Important Links:
 ----------------
 - [Team Blog](http://teamtwo-kahn.blogspot.com/ "Team Blog") 
+- [GitHub for Windows](http://windows.github.com/ "Github for Windows")
+- [PostgreSQL Downloads](http://www.postgresql.org/download/ "Postgres Downloads")
+- [Rails Installer](www.railsinstaller.org/en "Rails Installer")
