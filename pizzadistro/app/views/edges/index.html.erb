@@ -1,0 +1,29 @@
+<h1>Listing edges</h1>
+
+<table>
+  <tr>
+	<th><b>Type</b></th>
+	<th><b>Length</b></th>
+	<th><b>Carry Capacity</b></th>
+	<th><b>Base Cost (Cost per Mile)</b></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @edges.each do |edge| %>
+  <tr>
+	<td><%= edge.name %></td>
+	<td><%= edge.length %></td>
+	<td><%= edge.carry_capacity %></td>
+	<td><%= edge.base_cost %> (<% edge.cost_per_mile %>)</td>
+    <td><%= link_to 'Show', edge %></td>
+    <td><%= link_to 'Edit', edit_edge_path(edge) %></td>
+    <td><%= link_to 'Destroy', edge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Edge', new_edge_path %>

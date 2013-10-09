@@ -1,0 +1,22 @@
+<h1>Listing distros</h1>
+
+<table>
+  <tr>
+    <th><b>ID</b></th>
+    <th><b>Location</b></th>
+    <th></th>
+  </tr>
+
+<% @distros.each do |distro| %>
+  <tr>
+	<td><%= distro.id %></td>
+	<td>(<%=distro.location.x%>,<%=distro.location.y%>)</td>
+    <td><%= link_to 'Edit', edit_distro_path(distro) %></td>
+    <td><%= link_to 'Destroy', distro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Distro', new_distro_path %>
