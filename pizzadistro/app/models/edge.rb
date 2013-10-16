@@ -32,6 +32,10 @@ class Edge < ActiveRecord::Base
 	@len ||= calculate_length()
   end
   
+  def color
+	return type.color
+  end
+  
   private
   
 	  def calculate_length

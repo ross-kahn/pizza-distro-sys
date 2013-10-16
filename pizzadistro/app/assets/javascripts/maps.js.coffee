@@ -58,8 +58,8 @@ drawLocation = (context, x, y, cellsize, p, isDistro, name) ->
   truex = (cellsize/2) + (x * cellsize) + p + .5
   truey = (cellsize/2) + (y * cellsize) + p + .5
   
-  context.fillStyle = "#000099"
-  context.fillStyle = "#CC0000" if isDistro
+  context.fillStyle = "#008F00"
+  context.fillStyle = "#000000" if isDistro
   
   context.beginPath()
   context.arc truex, truey, p*2, 0, Math.PI * 2, true
@@ -69,19 +69,19 @@ drawLocation = (context, x, y, cellsize, p, isDistro, name) ->
   context.fillText name, truex - (cellsize/2), truey + p
   context.closePath() 
   
-drawEdges = (context, startNodes, endNodes, cellsize) ->
+drawEdges = (context, startNodes, endNodes, colors, cellsize) ->
   i = 0
   while i < startNodes.length
-    drawEdge(context, startNodes[i], endNodes[i], cellsize)
+    drawEdge(context, startNodes[i], endNodes[i], colors[i], cellsize)
     i = i+1
   
-drawEdge = (context, startLoc, endLoc, cellsize) ->
+drawEdge = (context, startLoc, endLoc, color, cellsize) ->
   p = cellsize / 4
   context.beginPath()
   
   context.moveTo (startLoc.x * cellsize)-p, (startLoc.y * cellsize)-p
   context.lineTo (endLoc.x * cellsize)-p, (endLoc.y * cellsize)-p
-  context.strokeStyle = "green"
+  context.strokeStyle = color
   context.lineWidth=5
   context.stroke()
   context.closePath()
@@ -89,10 +89,11 @@ drawEdge = (context, startLoc, endLoc, cellsize) ->
 $ ->
   stores = gon.stores if gon
   distros = gon.distros if gon
-  startNodes = gon.startNodes
-  endNodes = gon.endNodes
+  startNodes = gon.startNodes if gon
+  endNodes = gon.endNodes if gon
+  colors = gon.colors if gon
   cellsize = 20
   
   context = drawGrid(cellsize)
-  drawEdges(context, startNodes, endNodes, cellsize)
+  drawEdges(context, startNodes, endNodes, colors, cellsize)
   drawNodes(context, stores, distros, cellsize)

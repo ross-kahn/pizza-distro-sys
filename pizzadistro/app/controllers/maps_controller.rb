@@ -23,14 +23,17 @@ class MapsController < ApplicationController
 	
 	startNodes = []
 	endNodes = []
+	colors = []
 	
 	Edge.all.each do |s|
 		startNodes << s.location1
 		endNodes << s.location2
+		colors << s.color
 	end
 	
 	gon.startNodes = startNodes
 	gon.endNodes = endNodes
+	gon.colors = colors
 
     respond_to do |format|
       format.html # index.html.erb
