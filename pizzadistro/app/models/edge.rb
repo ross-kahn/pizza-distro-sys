@@ -35,7 +35,7 @@ class Edge < ActiveRecord::Base
   def color
 	return type.color
   end
-  
+
   private
   
 	  def calculate_length

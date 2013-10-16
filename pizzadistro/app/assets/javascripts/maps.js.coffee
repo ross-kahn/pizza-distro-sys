@@ -81,6 +81,7 @@ drawEdge = (context, startLoc, endLoc, color, cellsize) ->
   
   context.moveTo (startLoc.x * cellsize)-p, (startLoc.y * cellsize)-p
   context.lineTo (endLoc.x * cellsize)-p, (endLoc.y * cellsize)-p
+
   context.strokeStyle = color
   context.lineWidth=5
   context.stroke()
