@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pizzadistro</title>
+  <%= include_gon %>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% flash.each do |key, value| %>
+  <%= content_tag(:div, value, :class => "flash #{key}") %>
+<% end %></br>
+
+<%= link_to 'Distribution Centers', distros_path %> ==
+<%= link_to 'Edges', edges_path %> ==
+<%= link_to 'Stores', stores_path %> ==
+<%= link_to 'Types', types_path %> ==
+<%= link_to 'Locations', locations_path %> == 
+<%= link_to 'Map', map_path %></br>
+
+<%= yield %>
+
+</body>
+</html>
