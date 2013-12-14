@@ -1,6 +1,9 @@
 Pizzadistro::Application.routes.draw do
   get '/map', to: 'maps#index', as: "map"
 
+  get '/dijkstra', to: 'dijkstra#index', as: "dijkstra"
+
+  post '/dijkstra' => 'dijkstra#index', :as => :do_dijkstra
 
   resources :types
 
@@ -15,7 +18,6 @@ Pizzadistro::Application.routes.draw do
 
 
   resources :edges
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

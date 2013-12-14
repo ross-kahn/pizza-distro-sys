@@ -12,12 +12,12 @@
   <% end %>
   
   <div class="field">
-    <h3><%= f.label 'Edge 1' %>:</h3>
+    <h3><%= f.label 'Location 1' %>:</h3>
 	<%= collection_select(:edge, :location1_id, @locations, :id, :coord_s, {:prompt => true}) %><br />
   </div>
   
   <div class="field">
-    <h3><%= f.label 'Edge 2' %>:</h3>
+    <h3><%= f.label 'Location 2' %>:</h3>
 	<%= collection_select(:edge, :location2_id, @locations, :id, :coord_s, {:prompt => true}) %><br />
   </div>
   

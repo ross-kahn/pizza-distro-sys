@@ -8,7 +8,6 @@
 	<th><b>Carry Capacity</b></th>
 	<th><b>Base Cost (Cost per Mile)</b></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @edges.each do |edge| %>
@@ -18,7 +17,6 @@
 	<td><%= edge.length.round(2) %></td>
 	<td><%= edge.carry_capacity %></td>
 	<td>$<%= edge.base_cost %> <i>($<%= edge.cost_per_mile %>/mi)</i></td>
-    <td><%= link_to 'Edit', edit_edge_path(edge) %></td>
     <td><%= link_to 'Destroy', edge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>

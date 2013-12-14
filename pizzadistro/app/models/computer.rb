@@ -49,6 +49,20 @@ class Computer
 	return nil
   end
   
+  	# Well this isn't exactly right but whatever
+  def cost_for_path(path_cpy, amount)
+	cost = 0
+	path = path_cpy
+		
+	while(path.length > 1)
+		loc1 = path.shift
+		loc2 = path[0]
+			
+		cost += cost_between(loc1, loc2, amount)
+	end
+	return cost
+  end
+  
   private
   
 	# Finds the edge with the smallest distance cost

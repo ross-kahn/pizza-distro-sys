@@ -1,0 +1,32 @@
+<h1>Dijkstra Query</h1>
+
+<h3>Please look up appropriate Starting Distribution Center ID's in the Distribution Center tab</h3>
+<h3>Ending Store ID's can be found in the Stores tab</h3>
+<h3>This feature expects proper input... if you try to break it, it will break!</h3>
+<p>
+To see the power of this computer, try going from D5 to S4 with varying amounts of cargo. With a little calculation, it's easy enough to see that with a (trivial) cargo of 1, the best path is D5-D4-S5-S4, even though it is way longer in distance. 
+</p>
+
+<p>
+One interesting aspect of this program, though, is the fact that different types of routes have different carry capacities. Because of this factor, it becomes borderline impossible to "eyeball" the best route once the amount you're shipping increases past 1.
+</p>
+
+<p>
+To see this in action, try shipping between the same two points (D5 and S4), but increase the amount to 30 (the maximum carry capacity for a plane). Airplanes are more expensive than trucks, but can hold more cargo. Trucks can only hold 10, which means that for a cargo of 30, 3 trucks need to be shipped versus only one plane! This makes the route D5-D4-S5-S4 actually less costly.
+</p>
+
+<p>
+ 
+<%= form_tag do %>
+  <%= label_tag(:loc1, "Starting Distribution Center ID:") %>
+  <%= number_field_tag(:loc1) %></br>
+  
+  <%= label_tag(:loc2, "Ending Store ID:") %>
+  <%= number_field_tag(:loc2) %> </br>
+  
+  <%= label_tag(:amount, "Amount of Cargo:") %>
+  <%= number_field_tag(:amount) %> </br>  
+  <%= submit_tag("Submit") %>
+<% end %>
+
+<br />

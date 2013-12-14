@@ -56,7 +56,7 @@ class EdgesController < ApplicationController
 	@edge.location1 = Location.find(params[:edge][:location1_id])
 	@edge.location2 = Location.find(params[:edge][:location2_id])
 	@edge.type = Type.find(params[:edge][:type_id])
-	@edge.uid = @edge.uid
+	@edge.uid = @edge.find_uid
 
     respond_to do |format|
       if @edge.save

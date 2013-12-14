@@ -6,8 +6,6 @@
     <th><b>Cost per Mile</b></th>
     <th><b>Carry Capacity</b></th>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @types.each do |type| %>
@@ -15,8 +13,6 @@
 	<td><%= type.name %></td>
     <td><%= type.cpm %></td>
     <td><%= type.carrycap %></td>
-    <td><%= link_to 'Show', type %>  </td>
-    <td><%= link_to 'Edit', edit_type_path(type) %>  </td>
     <td><%= link_to 'Destroy', type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>

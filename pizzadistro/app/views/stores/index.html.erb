@@ -11,7 +11,6 @@
   <tr>
 	<td><%= store.id %></td>
 	<td>(<%=store.location.x%>,<%=store.location.y%>)</td>
-    <td><%= link_to 'Edit', edit_store_path(store) %></td>
     <td><%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
